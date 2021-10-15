@@ -1,0 +1,56 @@
+.card{
+  
+  &__conteudo{
+    margin: 2% 6%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  &__titulo{
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: .3rem;
+  }
+ 
+  &__descricao{
+
+    font-size: 1.4rem;
+  }
+
+  &__stats{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stats{
+
+    &__icon{
+      margin-right: .4rem;
+    }
+
+    &__stars{
+      margin-right: 10px;
+    }
+
+    &__lastUpdate{
+      margin-right: 10px;
+
+      &::before{
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-top: -.4rem;
+        margin-right: 1rem;
+        -moz-border-radius: 7.5px;
+        -webkit-border-radius: 7.5px;
+        border-radius: 7.5px;
+        background-color: #000;
+        vertical-align: middle;
+      }
+    }
+  }
+}

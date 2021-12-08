@@ -9,34 +9,29 @@ const UserProfile = (props) => {
   const [informacoes, setInformacoes] = useState([]);
   
   useEffect(() => {
-    const usuario = props.match.params.name;
     const getData = async ()=>{
-      await axios.get(`https://api.github.com/users/${usuario}/repos`)
-    .then((response)=>{
-      setRepositorios(response.data)
-    }).catch(()=>{
-      console.log('err')
-    })
-  }
-  getData()
-  }, [props.match.params.name])
+      await axios.get(`https://api.github.com/users/${props.match.params.name}/repos`)
+      .then((response)=>{
+        setRepositorios(response.data)
+      }).catch(()=>{
+        console.log('err')
+      })
+    }
+    getData()
+  }, [props])
 
   useEffect(() => {
-    const usuario = props.match.params.name;
     const getUser = ()=>{
-      axios.get(`https://api.github.com/users/${usuario}`)
-    .then((response)=>{
-      setInformacoes(response.data)
-      console.log(response.data)
-    }).then((response)=>{
-      // console.log(informacoes.name)
-      document.title = `${informacoes.name} é demais!`
-    }).catch(()=>{
-      console.log('err')
-    })
-  }
-  getUser()
-  }, [informacoes.name])
+      axios.get(`https://api.github.com/users/${props.match.params.name}`)
+      .then((response)=>{
+        setInformacoes(response.data)
+        document.title = `${response.data.name}`
+      }).catch(()=>{
+        console.log('err')
+      })
+    }
+    getUser()
+  }, [props])
 
   const goHome = () =>{
     window.location = "/";

@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import '../../css/reset.css';
 import '../../css/style.css';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import UserProfile from '../UserProfile/UserProfile';
 const Search = () => {
-
   const [usuarioConsulta, setUsuarioConsulta] = useState("");
   const [usuario, setUsuario] = useState({
     nome:"",
@@ -32,7 +29,6 @@ const Search = () => {
       setUsuario(usuario.seguidores = resposta.followers);
       setUsuario(usuario.seguindo = resposta.following);
       setUsuario(usuario.login = resposta.login);
-      console.log(resposta)
       window.location=`/${usuario.login}`;
     })
   }

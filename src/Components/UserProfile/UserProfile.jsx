@@ -25,7 +25,7 @@ const UserProfile = (props) => {
       axios.get(`https://api.github.com/users/${props.match.params.name}`)
       .then((response)=>{
         setInformacoes(response.data)
-        document.title = `${response.data.name}`
+        document.title = `Usuário(a) ${response.data.name}`
       }).catch(()=>{
         console.log('err')
       })

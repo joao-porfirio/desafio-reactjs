@@ -24,6 +24,20 @@
     }
   }
 
+  &__legend{
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 2.5rem;
+
+    @include for-phone-only{
+      margin-bottom: 3rem;
+      text-align: left;
+      margin: 0 10px;
+      font-style: italic;
+    }
+
+  }
   &__repository{
     flex: 1;
     height: 100vh;

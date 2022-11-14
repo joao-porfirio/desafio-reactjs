@@ -6,7 +6,7 @@ const Card = (props) => {
   return (
     <section className="card">
       <article className="card__conteudo">
-        <h1 className="card__titulo">{props.title}</h1>
+      <a target="_blank" href={props.link}><h1 className="card__titulo">{props.title}</h1></a>
         <p className="card__descricao">{props.descricao}</p>
         <div className="card__stats stats">
           <img className="stats__icon" src={star} alt=""/> 

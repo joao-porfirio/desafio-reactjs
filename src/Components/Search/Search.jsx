@@ -13,13 +13,13 @@ const Search = () => {
     seguindo:"",
     login:""
   });
-  const buscarUsuario = (event) =>{
+  const buscarUsuario = (event) =>{
     event.preventDefault();
     const url = `https://api.github.com/users/${usuarioConsulta}`;
     console.log(url)
-    return fetch(url)
-    .then(resposta =>{
-      return resposta.json();
+    return fetch(url)
+    .then(resposta =>{
+      return resposta.json();
     }).then(resposta=>{
       setUsuario(usuario.nome = resposta.name);
       setUsuario(usuario.id = resposta.id);
